@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<div class="jumbotron jumbotron-fluid header">
+  <div class="container">
+    <div class='left'>Simple blog</div>
+    <div class='right'>&#9998;<%= link_to 'New Post', new_post_path %> </div>
+    <div class='right'>&#9825; <%= link_to 'Home', posts_path %></div>
+  </div>
+</div>
+<%= yield %>
+</body>
+</html>
+
