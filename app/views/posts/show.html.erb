@@ -1,5 +1,6 @@
 <div class='cont show_post'>
   <p id="notice"><%= notice %></p>
+  <p id="alert"><%= alert %></p>
 
   <div>
     <h4>Title:</h4>
@@ -20,8 +21,22 @@
     <h4>Author:</h4>
     <p><%= @post.author.full_name %></p>
   </div>
+  <div style="background: #fef7ff;">
+    <i>  &#9997; <%= distance_of_time_in_words(@post.updated_at, Time.now) %> ago</i> &nbsp; &nbsp;
+    <i> &#128065; <%= @post.views_count %> </i> &nbsp; &nbsp;
+    <i> &#128488;	<%= @post.comments_count || 0 %> <%= @post.comments_count != 1 ? ' comments' : ' comment' %></i>
 
+  </div>
   <br/>
-  <div class='btn btn-primary'><%= link_to 'Edit', edit_post_path(@post) %></div>
+  <div class='btn btn-warning'><%= link_to 'Edit', edit_post_path(@post) %></div>
   <div class='btn btn-primary'><%= link_to 'Back', posts_path %></div>
+</div>
+<div class='cont add_comment'>
+  <h4>New Comment</h4>
+  <%= render 'comment_form' %>
+</div>
+<div class='cont comment_list'>
+  <h4>Comments</h4>
+
+  <%= render 'comments_list' %>
 </div>
