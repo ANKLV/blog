@@ -11,23 +11,16 @@
   a{
     font-size: 0.60em;
   }
-  .left{
-    display: inline;
-    float: left;
-  }
-  .right{
-    display: inline;
-    float: right;
-  }
 }
 .cont{
-  margin: 20px;
-  width: 60%;
-}
-.ow_x{
-  overflow-x: auto;
+  margin: auto;
+  text-align: justify;
   width: 90%;
+  img{
+    margin: 2%;
+  }
 }
+
 .show_post{
   p{
     font-size: 15px;
@@ -49,14 +42,8 @@ body{
   h4{
     color: #833ab4;
   }
-  td{
-    p {
-      font-size: 15px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-      max-width: 350px;
-    }
+  h5{
+    color: #833ab4;
   }
   h2{
     color: #833ab4;
@@ -69,17 +56,11 @@ body{
   }
 }
 @media screen and (max-width: 600px) {
-  .none{
-    display: none;
-  }
   .header{
     font-size: 1.5em;
   }
-  .cont{
-    width: 90% ;
-    .select_author{
-      width: 200px;
-    }
+  .search_imp{
+    margin-bottom: 5%;
   }
 }
 .invisible{
@@ -96,6 +77,9 @@ body{
   margin-bottom: 10px;
   word-break: break-word;
   overflow: hidden;
+  img {
+    width: 100px;
+  }
   a {
     text-decoration: none;
     color: white;
@@ -116,4 +100,70 @@ body{
 }
 #alert {
   color: red;
+}
+.add_comment h6 a {
+  color: blue;
+  &:hover{
+    color: purple;
+  }
+}
+.left{
+  display: inline;
+  float: left;
+}
+.right{
+  display: inline;
+  float: right;
+}
+.show_post_author img{
+  width: 100px;
+}
+.container_index{
+  a{
+    color: black !important;
+    font-weight: bold;
+    &:hover{
+      color: purple !important
+    }
+  }
+  img{
+    width: 100px;
+  }
+  .clickable{
+    padding: 2%;
+    text-align: justify;
+    &:hover{
+      background: #ebe1ff;
+    }
+  }
+  .column{
+    overflow: hidden;
+  }
+}
+.h5_c{
+  margin-top: -3%;
+}
+.search{
+  padding: 2%;
+}
+.trix-content{
+  a{
+    color: blue !important;
+    &:hover{
+      color: purple !important
+    }
+  }
+}
+.modal_login{
+  a {
+    text-decoration: none;
+    color: white;
+    &:hover{
+      background: none;
+      color: white;
+    }
+    &:visited{
+      color: white;
+    }
+  }
 }

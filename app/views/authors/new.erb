@@ -1,0 +1,18 @@
+<div class='cont'>
+  <h2>Sign Up</h2>
+  <%= form_for @author do |f|%>
+    <div class="field">
+      <%= f.label :email%><br>
+      <%= f.text_field :email%><br>
+      <i style='color: gray'>it shold be like <b>smth@domain.com</b></i>
+    </div>
+    <div class="field">
+      <%= f.label :password%><br>
+      <%= f.password_field :password%><br>
+      <i style='color: gray'>it shold be more then <b>6</b> symbols</i>
+    </div>
+    <div class="actions ">
+      <%= f.submit 'Sign up', class: "btn btn-success" %>
+    </div>
+  <%end%>
+</div>
