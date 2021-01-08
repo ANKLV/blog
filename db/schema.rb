@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_31_140648) do
+ActiveRecord::Schema.define(version: 2021_01_08_145927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,17 @@ ActiveRecord::Schema.define(version: 2020_12_31_140648) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "author_comment_votes", force: :cascade do |t|
+    t.bigint "comment_id"
+    t.bigint "author_id"
+    t.boolean "positive"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id", "comment_id"], name: "index_author_comment_votes_on_author_id_and_comment_id", unique: true
+    t.index ["author_id"], name: "index_author_comment_votes_on_author_id"
+    t.index ["comment_id"], name: "index_author_comment_votes_on_comment_id"
+  end
+
   create_table "authors", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -72,6 +83,8 @@ ActiveRecord::Schema.define(version: 2020_12_31_140648) do
     t.integer "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_comments_on_ancestry"
   end
 
   create_table "posts", force: :cascade do |t|

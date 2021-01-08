@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   validates :name, presence: true
   validates :title, presence: true
   validates :content, presence: true
-  validates :title, length: { maximum: 50, message: 'is too long' }
+  validates :title, length: { maximum: 100, message: 'is too long' }
 
   before_save do
     self.text = content.body.to_plain_text if content
